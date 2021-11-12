@@ -1,0 +1,11 @@
+.banner{
+    background-image: url("https://cdn.shopify.com/s/files/1/0586/9935/0180/files/slide4.jpg");
+    /* background-image: url("https://cdn.shopify.com/s/files/1/0586/9935/0180/files/slide3.jpg"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-body{
+    padding: 150px 5px;
+}

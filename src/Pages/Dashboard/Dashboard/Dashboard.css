@@ -1,0 +1,21 @@
+.top-bar{
+    padding: 10px 0;
+    background-color: rgb(149, 62, 255);
+}
+
+.border{
+    border: 1px solid red;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.side-bar button{
+    margin: 10px 0;
+}
+
+

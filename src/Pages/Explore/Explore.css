@@ -1,0 +1,27 @@
+
+.product-card{
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+.product-img img{
+    width: 100%;
+}
+
+.product-info{
+    margin: 10px 0;
+}
+
+.product-info p{
+    margin-bottom: 0;
+}
+
+.name{
+    font-size: 1.3rem;
+}
+
+.rating i{
+    color: rgb(255, 144, 39);
+    margin: 3px 4px;
+}

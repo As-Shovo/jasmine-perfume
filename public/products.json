@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Gabbana",
+        "img": "https://i.ibb.co/9NnghQV/gabbana.jpg",
+        "dec": "The One for Men Eau de Parfum is part of the iconic world of The One, offering a deeper fragrance experience for the perfume connoisseur. Masculine and magnetic, this highly intense scent is a statement of charisma and sophistication. ",
+        "price": "49.00",
+        "rating": 4
+    },
+    {
+        "id": 2,
+        "name": "Vera Wang",
+        "img": "https://i.ibb.co/X3BgvPc/vera-wang.jpg",
+        "dec": "Fragrance provokes the senses and conjures up memories in inexplicable ways. The significance of a fragrance that captures all of the emotion, dignity and joy of a wedding is immeasurable. Incredibly intimate yet subtle, a bride’s fragrance remains with her long after the ceremony is over.",
+        "price": "45.00",
+        "rating": 4
+    },
+    {
+        "id": 3,
+        "name": "Elysium Colloge",
+        "img": "https://i.ibb.co/WDtmFYN/elysium-cologne.jpg",
+        "dec": "The One for Men Eau de Parfum is part of the iconic world of The One, offering a deeper fragrance experience for the perfume connoisseur. Masculine and magnetic, this highly intense scent is a statement of charisma and sophistication. ",
+        "price": "39.00",
+        "rating": 5
+    },
+    {
+        "id": 4,
+        "name": "Amarre Cullb",
+        "img": "https://i.ibb.co/9wFfVW4/amarre-cullbe.jpg",
+        "dec": "Aqva Amara by Bvlgari is a Woody Aquatic fragrance for men. Aqva Amara was launched in 2014. The nose behind this fragrance is Jacques Cavallier. Top note is Sicilian Mandarin; middle notes are Watery Notes and Neroli; base notes are Olibanum and Indonesian Patchouli Leaf.",
+        "price": "46.00",
+        "rating": 5
+    },
+    {
+        "id": 5,
+        "name": "Paco Rabanne",
+        "img": "https://i.ibb.co/zRXphyx/paca-rabanne.jpg",
+        "dec": "Dare to be different! Addiction, sensuality, audacity. Femininity dares at Paco Rabanne... Three perfumes for women become iconic. Provocative heiress, an absolute goddess or a golden girl. For each woman, a perfume from Paco Rabanne.",
+        "price": "50.00",
+        "rating": 4
+    },
+    {
+        "id": 7,
+        "name": "Marc Jacobs",
+        "img": "https://i.ibb.co/hmCkRBs/marca-jacobs.jpg",
+        "dec": "The Perfect Marc Jacobs bottle is a fun mix of elegance and modernity. The weighted glass base is inspired by the grace and style of a classic perfume. At the top, the cap is crowned with an eclectic and multicolored collection of mis-matched charms. Each charm was selected by Marc himself, and injects a touch of his style into the design.",
+        "price": "49.00",
+        "rating": 4
+    },
+    {
+        "id": 6,
+        "name": "Luna",
+        "img": "https://i.ibb.co/G7bmjtX/luna.jpg",
+        "dec": "Luna by Penhaligon's is a fragrance for women and men. Luna was launched in 2016. Top notes are Lemon, Bergamot and Bitter Orange; middle notes are Rose, Juniper Berries and Jasmine; base notes are Balsam Fir, Musk and Ambergris.",
+        "price": "30.00",
+        "rating": 3
+    },
+    {
+        "id": 8,
+        "name": "Gabbana Light",
+        "img": "https://i.ibb.co/WDkMBDY/gabbana-light.jpg",
+        "dec": "Light Blue by Dolce&Gabbana is a Floral Fruity fragrance for women. Light Blue was launched in 2001. The nose behind this fragrance is Olivier Cresp. Top notes are Sicilian Lemon, Apple, Cedar and Bellflower; middle notes are Bamboo, Jasmine and White Rose; base notes are Cedar, Musk and Amber.",
+        "price": "35.00",
+        "rating": 5
+    },
+    {
+        "id": 9,
+        "name": "Swiss Arabian",
+        "img": "https://i.ibb.co/pzYpnT5/swiss-arabian.jpg",
+        "dec": "Their exquisite range of perfumes offers The Perfect Mix of the East and the West, staying true to their tagline “The Perfect Mix. The East is known for its heritage, passion and traditions, which they are very proud of, and at the same time they admire",
+        "price": "60.00",
+        "rating": 5
+    },
+    {
+        "id": 10,
+        "name": "Fantasy",
+        "img": "https://i.ibb.co/4fwg2wh/fantasy.jpg",
+        "dec": "Fantasy by Britney Spears is a Floral Fruity Gourmand fragrance for women. Fantasy was launched in 2005. The nose behind this fragrance is James Krivda. Top notes are Kiwi, Red Litchi and Quince; middle notes are White Chocolate, Cupcake, Orchid and Jasmine; base notes are Musk, Woodsy Notes and Orris Root.",
+        "price": "47.00",
+        "rating": 4
+    },
+    {
+        "id": 11,
+        "name": "Mademosllas",
+        "img": "https://i.ibb.co/9VBf4NH/mademosllas.jpg",
+        "dec": "Fantasy by Britney Spears is a Floral Fruity Gourmand fragrance for women. Fantasy was launched in 2005. The nose behind this fragrance is James Krivda. Top notes are Kiwi, Red Litchi and Quince; middle notes are White Chocolate, Cupcake, Orchid and Jasmine; base notes are Musk, Woodsy Notes and Orris Root.",
+        "price": "50.00",
+        "rating": 5
+    },
+    {
+        "id": 12,
+        "name": "Est Bella",
+        "img": "https://i.ibb.co/YPnWWx2/est-belle.jpg",
+        "dec": "La Vie Est Belle by Lancome is a Floral Fruity Gourmand fragrance for women. La Vie Est Belle was launched in 2012. La Vie Est Belle was created by Olivier Polge, Dominique Ropion and Anne Flipo. Top notes are Black Currant and Pear; middle notes are iris, Jasmine and Orange Blossom; base notes are Praline, Vanilla, Patchouli and Tonka Bean.",
+        "price": "47.00",
+        "rating": 4
+    }
+]
