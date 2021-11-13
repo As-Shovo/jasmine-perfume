@@ -11,21 +11,21 @@ const Register = ({ setIsLogin }) => {
     const [spiner, setSpiner] = useState(false);
 
     const { register, handleSubmit } = useForm();
-    const [resUser, setResUser] = useState({});
+    // const [resUser, setResUser] = useState({});
     const onSubmit = data => {
         setSpiner(true);
-        setResUser(data);
-        console.log(resUser);
-        
-        createUser();
+        // setResUser(data);
+        // console.log(resUser);
+
+        createUser(data.email, data.password, data.name);
 
     };
 
-    const createUser = () => {
+    const createUser = (email,  password, name) => {
         setSpiner(false);
         // console.log(resUser.email, resUser.password, resUser.name, resUser.imgUrl);
-        emailPasswordCreateUser(resUser.email, resUser.password, resUser.name, resUser.imgUrl, history);
-        console.log(resUser);
+        emailPasswordCreateUser(email, password, name, history);
+        console.log(name);
         // reset();
     };
 
@@ -47,8 +47,6 @@ const Register = ({ setIsLogin }) => {
                 <input placeholder="Your Name" type="text" {...register("name", { required: true })} />
                 <br />
                 <input placeholder="Your Email" type="email" {...register("email", { required: true })} />
-                <br />
-                <input placeholder="Your Image Url" {...register("imgUrl", { required: true })} />
                 <br />
                 <input placeholder="Your Password" type="password" {...register("password", { required: true })} />
                 <br />

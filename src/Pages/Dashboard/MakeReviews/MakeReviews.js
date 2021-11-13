@@ -11,6 +11,7 @@ const MakeReviews = () => {
     const onSubmit = data => {
         console.log(data);
 
+
         fetch('https://aqueous-temple-04914.herokuapp.com/review', {
             method: 'POST',
             headers: { "content-type": "application/json" },
@@ -48,7 +49,7 @@ const MakeReviews = () => {
                             <br />
                             <input placeholder="Your Email" type="email" {...register("email", { required: true })} />
                             <br />
-                            <input placeholder="Your Rating" type="number" {...register("rating", { required: true })} />
+                            <input placeholder="Your Rating" type="number" min="1" max="5" {...register("rating", { required: true })} />
                             <br />
                             <input placeholder="Review" type="text" {...register("review", { required: true })} />
                             <br />

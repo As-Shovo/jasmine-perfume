@@ -21,11 +21,11 @@ const Login = () => {
     const location = useLocation();
 
     const { register, handleSubmit } = useForm();
-    const [resUser, setResUser] = useState({});
+    // const [resUser, setResUser] = useState({});
     const onSubmit = data => {
-        setResUser(data);
-        signInEmailUser();
-        console.log(resUser);
+        // setResUser(data);
+        signInEmailUser(data.email, data.password);
+        // console.log(resUser);
 
     };
 
@@ -45,12 +45,12 @@ const Login = () => {
 
 
 
-    const signInEmailUser = () => {
+    const signInEmailUser = (email, password) => {
         // console.log(resUser.email, resUser.password);
-        signInEmailPasswordUser(resUser.email, resUser.password, location, history);
+        signInEmailPasswordUser(email, password, location, history);
     }
 
-    console.log(resUser.email);
+    // console.log(resUser.email);
 
 
     return (

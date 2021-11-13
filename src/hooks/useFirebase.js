@@ -48,26 +48,26 @@ const useFirebase = () => {
         });
     }, [auth]);
 
-    useEffect(()=>{
+    useEffect(() => {
         setSpiner(true)
         fetch(`https://aqueous-temple-04914.herokuapp.com/users/${user.email}`)
-        .then(res => res.json())
-        .then(result =>{
-            setAdmin(result.admin);
-            setSpiner(false)
-        })
-    },[user.email])
+            .then(res => res.json())
+            .then(result => {
+                setAdmin(result.admin);
+                setSpiner(false)
+            })
+    }, [user.email])
 
 
 
-    const emailPasswordCreateUser = (email, password, name, photoUrl, history) => {
+    const emailPasswordCreateUser = (email, password, name, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 // Signed in 
                 setUser(result.user);
 
-                updateUser(name, photoUrl);
+                updateUser(name);
 
                 history.push('/');
 
@@ -108,9 +108,9 @@ const useFirebase = () => {
     }
 
 
-    const updateUser = (name, photoUrl) => {
+    const updateUser = (name) => {
         updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photoUrl
+            displayName: name
         }).then(() => {
             // Profile updated!
             // ...

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 import profile from '../../../image/profile.png';
 
 
 
 const Review = () => {
 
+    const {user} = useAuth();
     const [reviews, setReviews] = useState([]);
     const [spiner, setSpiner] = useState(false);
 
@@ -17,7 +19,7 @@ const Review = () => {
         setSpiner(false)
     }, [])
 
-    console.log(reviews);
+    console.log(user);
 
     return (
         <div className="my-5">

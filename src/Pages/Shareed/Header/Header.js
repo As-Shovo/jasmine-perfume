@@ -11,7 +11,7 @@ import './Header.css';
 const Header = () => {
 
     const { user, handleSignOut } = useAuth();
-    // console.log(user);
+    console.log(user);
 
 
     return (
@@ -29,13 +29,13 @@ const Header = () => {
                         <Nav.Link as={Link} className="a-link" to="/explore">Explore</Nav.Link>
                         <Nav.Link as={Link} className="a-link" to="/contact">Contact</Nav.Link>
                         <Nav.Link as={Link} className="a-link" to="/dashboard">Dashboard</Nav.Link>
+                        <span className="a-link">{user?.displayName}</span>
                         {
                             user.email ?
                                 <Button className="" onClick={handleSignOut}>Logout</Button> :
 
                                 <Link to="/login"><Button className="">Login</Button></Link>
                         }
-                        <span>{user?.displayName}</span>
 
 
                     </Nav>
