@@ -11,7 +11,7 @@ const Review = () => {
 
     useEffect(() => {
         setSpiner(true)
-        fetch('http://localhost:5000/review')
+        fetch('https://aqueous-temple-04914.herokuapp.com/review')
             .then(res => res.json())
             .then(result => setReviews(result));
         setSpiner(false)
