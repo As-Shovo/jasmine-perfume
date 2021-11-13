@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import { Col, Container, Row, Spinner, Button } from 'react-bootstrap';
 import Header from '../../Shareed/Header/Header';
 import { useForm } from "react-hook-form";
 
@@ -86,8 +86,7 @@ const Login = () => {
                                 <br />
                                 <div className="text-center">
                                     <p>Login With</p>
-                                    <button onClick={handleGoogleSignin}>Google</button>
-                                    <button>Github</button>
+                                    <Button onClick={handleGoogleSignin}><i className="fab fa-google mx-3"></i>Google</Button>
                                 </div>
                             </div>
 

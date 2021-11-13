@@ -11,7 +11,7 @@ import './Header.css';
 const Header = () => {
 
     const { user, handleSignOut } = useAuth();
-    console.log(user);
+    // console.log(user);
 
 
     return (

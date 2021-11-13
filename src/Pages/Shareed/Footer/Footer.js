@@ -16,9 +16,9 @@ const Footer = () => {
                                 independent mind.</p>
 
                             <span className="p-3" style={{ fontSize: '1.4rem' }}>
-                                <i class=" px-3 fab fa-twitter"></i>
-                                <i class=" px-3 fab fa-google-plus-g"></i>
-                                <i class=" px-3 fab fa-instagram"></i>
+                                <i className=" px-3 fab fa-twitter"></i>
+                                <i className=" px-3 fab fa-google-plus-g"></i>
+                                <i className=" px-3 fab fa-instagram"></i>
                             </span>
                         </div>
                     </Col>
