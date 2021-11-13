@@ -9,7 +9,7 @@ const useFirebase = () => {
 
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const [admin, setAdmin] = useState(false);
+    const [admin, setAdmin] = useState('');
     const [spiner, setSpiner] = useState(false);
 
     const auth = getAuth();

@@ -51,11 +51,16 @@ const Dashboard = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <h1 className="my-4">Welcome Dashboard {user?.displayName}</h1>
-            {
-                spiner && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
-            }
-            <div className="my-2">--------------------------------------------------------------------------------------------------------</div>
+
+            <div className="bg-dark">
+                <h1 className="py-4" style={{color:'white'}}>Welcome Dashboard {user?.displayName}</h1>
+                {
+                    spiner && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
+                }
+                <div className="py-2" style={{color:'white'}}>--------------------------------------------------------------------------------------------------------</div>
+
+            </div>
+
             {
 
                 isLoading && <div className="text-center"><Spinner animation="grow" variant="success" /></div>

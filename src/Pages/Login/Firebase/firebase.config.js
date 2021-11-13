@@ -1,10 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAypMX3VcOFdSY8CN1liBUe5iKy_cGznzk",
-    authDomain: "jasmine-101.firebaseapp.com",
-    projectId: "jasmine-101",
-    storageBucket: "jasmine-101.appspot.com",
-    messagingSenderId: "523703581493",
-    appId: "1:523703581493:web:79616b356e2c502189ea7c"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 };
+
+console.log(firebaseConfig);
 
 export default firebaseConfig;

@@ -77,7 +77,7 @@ const ManageOrders = () => {
                 {
                     spineer && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
                 }
-                <Table striped bordered hover responsive size="sm">
+                <Table striped bordered hover  responsive size="sm">
                     <thead>
                         <tr>
                             <th>NO</th>
