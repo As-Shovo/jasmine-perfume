@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Container, Row, Button, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -10,21 +10,29 @@ const Products = () => {
 
     const [products, setProducts] = useState([]);
 
+    const [spiner, setSpiner] = useState(false);
+
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        setSpiner(true)
+        fetch('https://aqueous-temple-04914.herokuapp.com/products')
             .then(res => res.json())
             .then(result => {
                 setProducts(result);
+                setSpiner(false)
             })
     }, [])
 
 
 
     return (
-        <div>
-            <h1> Products {products.length}</h1>
+        <div className="my-5">
+            <h1 className="text-center my-5"> Best Perfume </h1>
             <Container>
+                {
+                    spiner&& <div className="text-center"><Spinner  animation="grow" variant="info" /></div>
+                }
+
                 <Row>
                     {
                         products.map(product => <Col key={product.id} md={4} sm={6}>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
+import Footer from '../../Shareed/Footer/Footer';
 import Header from '../../Shareed/Header/Header';
 import Products from '../Products/Products';
+import Review from '../Review/Review';
+import UpComming from '../UpComming/UpComming';
 import './Home.css';
 
 
@@ -26,6 +29,12 @@ const Home = () => {
             </div>
 
             <Products></Products>
+
+            <Review></Review>
+
+            <UpComming></UpComming>
+
+            <Footer></Footer>
 
         </div>
     );

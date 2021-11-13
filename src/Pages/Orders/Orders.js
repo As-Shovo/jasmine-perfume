@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 
 const Orders = () => {
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
@@ -15,21 +15,25 @@ const Orders = () => {
     const history = useHistory();
 
 
-
+    const [spiner, setSpiner] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${id}`)
+        setSpiner(true)
+        fetch(`https://aqueous-temple-04914.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 setProduct(data);
+                setSpiner(false)
             })
     }, [id]);
 
     const onSubmit = data => {
         console.log(data);
 
-        fetch('http://localhost:5000/orders', {
+        setSpiner(true)
+
+        fetch('https://aqueous-temple-04914.herokuapp.com/orders', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)
@@ -41,6 +45,7 @@ const Orders = () => {
                     alert('Order Submitted')
                     reset();
                     history.push('/explore');
+                    setSpiner(false)
                 }
             })
     };
@@ -53,7 +58,15 @@ const Orders = () => {
         <div>
             <h1 className="text-center my-5">Place Your Orders</h1>
             <Container>
+                {
+                    spiner && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
+                }
+
                 <div>
+                    {
+
+                        isLoading && <div className="text-center"><Spinner animation="grow" variant="success" /></div>
+                    }
                     <Row>
                         <Col md={6} sm={12}>
                             <div className="product-card">

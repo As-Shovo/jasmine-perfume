@@ -10,7 +10,7 @@ const MyOrders = () => {
 
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user?.email}`)
+        fetch(`https://aqueous-temple-04914.herokuapp.com/myOrders/${user?.email}`)
             .then(res => res.json())
             .then(result => {
                 setMyOrders(result);
@@ -22,7 +22,7 @@ const MyOrders = () => {
 
     const handleDelete = (id) => {
 
-        fetch(`http://localhost:5000/myOrders/${id}`, {
+        fetch(`https://aqueous-temple-04914.herokuapp.com/myOrders/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
             body: JSON.stringify()

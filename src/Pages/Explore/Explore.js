@@ -1,9 +1,9 @@
-import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Spinner, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../Shareed/Footer/Footer';
 import Header from '../Shareed/Header/Header';
 import './Explore.css';
 
@@ -12,12 +12,16 @@ const Explore = () => {
 
     const [products, setProducts] = useState([]);
 
+    const [spiner, setSpiner] = useState(false);
+
 
     useEffect(() => {
-        fetch('http://localhost:5000/explore')
+        setSpiner(true)
+        fetch('https://aqueous-temple-04914.herokuapp.com/explore')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
+                setSpiner(false)
             })
     }, [])
 
@@ -26,9 +30,14 @@ const Explore = () => {
     return (
         <div>
             <Header></Header>
-            <h1>Explore Pages {products.length}</h1>
+            <h1 className="text-center my-5">Explore Our Best Perfumes </h1>
 
-            <Container>
+            <Container className="my-4">
+
+                {
+                    spiner && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
+                }
+
                 <Row>
                     {
                         products.map(product => <Col key={product.id} md={3} sm={6}>
@@ -96,6 +105,8 @@ const Explore = () => {
                     }
                 </Row>
             </Container>
+
+            <Footer></Footer>
         </div>
     );
 };

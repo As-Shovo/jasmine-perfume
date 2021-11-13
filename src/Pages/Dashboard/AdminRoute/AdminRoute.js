@@ -5,12 +5,22 @@ import useAuth from '../../../hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
 
-    const { user, admin, isLoading } = useAuth();
+    const { user, admin, isLoading, spiner } = useAuth();
 
 
     if (isLoading) {
         return <div className="text-center"><Spinner animation="border" className="mt-5 my-5 mx-auto text-center" variant="success"></Spinner></div>
+    }
 
+
+
+
+
+    spiner && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
+    console.log(admin);
+    if (!admin) {
+        spiner && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
+        spiner && <div className="text-center"><Spinner animation="grow" variant="success" /></div>
     }
 
     return (

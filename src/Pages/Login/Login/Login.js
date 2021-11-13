@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import Header from '../../Shareed/Header/Header';
 import { useForm } from "react-hook-form";
 
@@ -16,7 +16,7 @@ import { useHistory, useLocation } from 'react-router';
 const Login = () => {
 
 
-    const { signInUsingGoogle, signInEmailPasswordUser } = useAuth();
+    const { signInUsingGoogle, signInEmailPasswordUser, isLoading } = useAuth();
     const history = useHistory();
     const location = useLocation();
 
@@ -24,8 +24,8 @@ const Login = () => {
     const [resUser, setResUser] = useState({});
     const onSubmit = data => {
         setResUser(data);
-        console.log(resUser);
         signInEmailUser();
+        console.log(resUser);
 
     };
 
@@ -38,7 +38,7 @@ const Login = () => {
     };
 
     const handleGoogleSignin = () => {
-        console.log('object');
+        // console.log('object');
         signInUsingGoogle(location, history);
 
     };
@@ -46,7 +46,7 @@ const Login = () => {
 
 
     const signInEmailUser = () => {
-        console.log(resUser.email, resUser.password);
+        // console.log(resUser.email, resUser.password);
         signInEmailPasswordUser(resUser.email, resUser.password, location, history);
     }
 
@@ -58,6 +58,10 @@ const Login = () => {
             <Header></Header>
 
             <Container>
+                {
+
+                    isLoading && <div className="text-center"><Spinner animation="grow" variant="success" /></div>
+                }
                 <div>
                     <Row>
                         <Col md={6} sm={12}>

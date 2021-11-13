@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import logo from '../../../image/logo-p.png';
+import logo from '../../../image/logo-p2.png';
 import './Header.css';
 
 

@@ -8,7 +8,7 @@ const ManageProducts = () => {
     const history = useHistory();
 
     useEffect(() => {
-        fetch('http://localhost:5000/explore')
+        fetch('https://aqueous-temple-04914.herokuapp.com/explore')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -17,7 +17,7 @@ const ManageProducts = () => {
 
     const handleDelete = (id) => {
 
-        fetch(`http://localhost:5000/explore/${id}`, {
+        fetch(`https://aqueous-temple-04914.herokuapp.com/explore/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
             body: JSON.stringify()

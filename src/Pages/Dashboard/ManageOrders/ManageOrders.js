@@ -1,18 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Container, Spinner, Table } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 const ManageOrders = () => {
 
+    const {spiner} = useAuth();
+
     const [orders, setOrders] = useState([]);
+    const [spineer, setSpiner] = useState(false);
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/myOrders")
+        setSpiner(true);
+        fetch("https://aqueous-temple-04914.herokuapp.com/myOrders")
             .then(res => res.json())
             .then(result => {
                 console.log(result);
                 setOrders(result)
+                setSpiner(false)
             })
     }, [])
 
@@ -20,8 +26,9 @@ const ManageOrders = () => {
 
 
     const handleDelete = (id) => {
+        setSpiner(true);
 
-        fetch(`http://localhost:5000/myOrders/${id}`, {
+        fetch(`https://aqueous-temple-04914.herokuapp.com/myOrders/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
             body: JSON.stringify()
@@ -33,27 +40,28 @@ const ManageOrders = () => {
                     alert("deleted !!!");
                     const remaining = orders.filter(md => md._id !== id);
                     setOrders(remaining);
+                    setSpiner(false)
                 }
             })
     };
 
 
-    const handleUserUpdate = (id)=>{
-        const url = `http://localhost:5000/myOrders/${id}`;
-        fetch(url,{
+    const handleUserUpdate = (id) => {
+        const url = `https://aqueous-temple-04914.herokuapp.com/myOrders/${id}`;
+        fetch(url, {
             method: "PUT",
-            headers:{
-                "content-type":"application/json"
+            headers: {
+                "content-type": "application/json"
             },
             body: JSON.stringify()
         })
-        .then(res => res.json())
-        .then(result => {
-            console.log(result);
-            if(result.acknowledged){
-                alert('Success Fully Update Data')
-            }
-        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                if (result.acknowledged) {
+                    alert('Success Fully Update Data')
+                }
+            })
     }
 
 
@@ -62,7 +70,13 @@ const ManageOrders = () => {
     return (
         <div>
             <h2>Manage Orders </h2>
+            {
+                    spiner&& <div className="text-center"><Spinner  animation="grow" variant="success" /></div>
+                }
             <Container>
+                {
+                    spineer && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
+                }
                 <Table striped bordered hover responsive size="sm">
                     <thead>
                         <tr>

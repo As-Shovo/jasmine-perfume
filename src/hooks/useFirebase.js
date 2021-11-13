@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
+    const [spiner, setSpiner] = useState(false);
 
     const auth = getAuth();
 
@@ -45,13 +46,15 @@ const useFirebase = () => {
             }
             setIsLoading(false)
         });
-    }, []);
+    }, [auth]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/users/${user.email}`)
+        setSpiner(true)
+        fetch(`https://aqueous-temple-04914.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(result =>{
-            setAdmin(result.admin)
+            setAdmin(result.admin);
+            setSpiner(false)
         })
     },[user.email])
 
@@ -85,6 +88,7 @@ const useFirebase = () => {
 
     const signInEmailPasswordUser = (email, password, location, history) => {
         setIsLoading(true);
+        // console.log(email);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 // Signed in 
@@ -123,7 +127,7 @@ const useFirebase = () => {
         const user = { email, displayName };
         // setIsLoading(true);
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://aqueous-temple-04914.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -156,7 +160,8 @@ const useFirebase = () => {
         handleSignOut,
         emailPasswordCreateUser,
         signInEmailPasswordUser,
-        isLoading
+        isLoading,
+        spiner
     };
 };
 

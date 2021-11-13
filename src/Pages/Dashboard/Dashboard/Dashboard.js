@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dashboard.css'
-import { Container, Nav, Button } from 'react-bootstrap'
+import { Container, Nav, Button, Spinner } from 'react-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom';
 import { Switch, Route, useRouteMatch } from "react-router-dom";
@@ -18,7 +18,7 @@ import AdminRoute from '../AdminRoute/AdminRoute';
 
 const Dashboard = () => {
 
-    const { user, handleSignOut, admin } = useAuth();
+    const { user, handleSignOut, admin, spiner, isLoading } = useAuth();
 
     let { path, url } = useRouteMatch();
     return (
@@ -31,8 +31,9 @@ const Dashboard = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="justify-content-end flex-grow-1 pe-3 dashbord">
-                            <Nav.Link as={Link} to={`${url}/myOrders`}>My Orders</Nav.Link>
+                            <Nav.Link as={Link} to={`/home`}>Home</Nav.Link>
                             <Nav.Link as={Link} to={`/explore`}>Orders</Nav.Link>
+                            <Nav.Link as={Link} to={`${url}/myOrders`}>My Orders</Nav.Link>
                             <Nav.Link as={Link} to={`${url}/payment`}>Payment</Nav.Link>
                             <Nav.Link as={Link} to={`${url}/reviews`}>Reviews</Nav.Link>
                             {
@@ -51,7 +52,14 @@ const Dashboard = () => {
                 </Container>
             </Navbar>
             <h1 className="my-4">Welcome Dashboard {user?.displayName}</h1>
+            {
+                spiner && <div className="text-center"><Spinner animation="grow" variant="info" /></div>
+            }
             <div className="my-2">--------------------------------------------------------------------------------------------------------</div>
+            {
+
+                isLoading && <div className="text-center"><Spinner animation="grow" variant="success" /></div>
+            }
             <Switch>
                 <Route path={`${path}/myOrders`}>
                     <MyOrders></MyOrders>
@@ -59,9 +67,9 @@ const Dashboard = () => {
                 <AdminRoute path={`${path}/manageOrders`}>
                     <ManageOrders></ManageOrders>
                 </AdminRoute>
-                <Route path={`${path}/addProduct`}>
+                <AdminRoute path={`${path}/addProduct`}>
                     <AddProduct></AddProduct>
-                </Route>
+                </AdminRoute>
                 <AdminRoute path={`${path}/manageProducts`}>
                     <ManageProducts></ManageProducts>
                 </AdminRoute>
